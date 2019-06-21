@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# hidden
+prova_cientista_de_dados
+XDG_CACHE_HOME/*
