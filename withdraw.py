@@ -13,33 +13,37 @@ class Withdraw():
             50: 8
         }
 
-    def do_withdraw(self, valor: int, list_backnote: list):
+    def do_withdraw(self, value: int, list_backnote: list):
         """
         >>> obj = Withdraw()
-        >>> obj.do_withdraw(valor=70, list_backnote=[5, 10, 50])
+        >>> obj.do_withdraw(value=70, list_backnote=[5, 10, 50])
         3
-        >>> obj.do_withdraw(valor=73, list_backnote=[20, 50])
+        >>> obj.do_withdraw(value=73, list_backnote=[20, 50])
         -1
         """
         count_banknotes = 0
         list_backnote.sort(reverse=True)
 
-        while valor > 0:
-            for note in list_backnote:
+        try:
+            while value > 0:
+                for note in list_backnote:
 
-                if math.trunc(valor / note) > 0:
-                    total_backnotes = math.trunc(valor / note)
+                    if math.trunc(value / note) > 0:
+                        total_backnotes = math.trunc(value / note)
 
-                    # subtrai do total de cédulas do caixa eletrônico
-                    self.banknotes_caixa_elet[note] = self.banknotes_caixa_elet[note] - total_backnotes
-                    # incrementa a quantidade de cedulas
-                    count_banknotes += total_backnotes
-                    # subtrai do valor pedido do saque
-                    valor -= total_backnotes * note
-                    continue
+                        # subtrai do total de cédulas do caixa eletrônico
+                        self.banknotes_caixa_elet[note] = self.banknotes_caixa_elet[note] - total_backnotes
+                        # incrementa a quantidade de cedulas
+                        count_banknotes += total_backnotes
+                        # subtrai do value pedido do saque
+                        value -= total_backnotes * note
+                        continue
 
-                elif valor > 0:
-                    return print('-1')
+                    elif value > 0:
+                        return print('-1')
+
+        except TypeError as err:
+            print(f"Valor de saque inválido {value} \nERROR: {err}")
 
         return print(count_banknotes)
 
@@ -47,9 +51,9 @@ class Withdraw():
 def main():
     obj = Withdraw()
     backnotes = [20, 50]
-    obj.do_withdraw(valor=701, list_backnote=backnotes)
+    obj.do_withdraw(value=101, list_backnote=backnotes)
 
 
 if __name__ == '__main__':
-    doctest.testmod()  # automatically validate the embedded tests
+    doctest.testmod()
     main()
