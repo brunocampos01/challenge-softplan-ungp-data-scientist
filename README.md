@@ -1,4 +1,5 @@
 # Challenge: Data Science at Softplan
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/70381f9925704c52831098759a39bb85)](https://www.codacy.com/app/brunocampos01/challenge-softplan?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=brunocampos01/challenge-softplan&amp;utm_campaign=Badge_Grade)
 [![Python 3.7](https://img.shields.io/badge/python-3.7-yellow.svg)](https://www.python.org/downloads/release/python-371/)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg)
 
@@ -9,10 +10,7 @@ Challenge for Data Scientist job at Softplan.
 [Question 04](withdraw.py)
 
 ## Requirements
-- Python 3.7.3 ou superior:<br/>
-```sh
-sudo apt-get install Python3.7.3
-```
+- Python 3.7.3
 
 ---
 
